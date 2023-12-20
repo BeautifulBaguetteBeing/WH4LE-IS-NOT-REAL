@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WH4LE</title>
+<meta name="description" content="WH4LE - Open a debug window on your Chromebook.">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="./favicon.png" />
+<style>
+* {
+    font-family: monospace;
+}
+body {
+    background: rgb(232, 242, 255);
+    color: #00005e;
+}
+.center {
+    text-align: center;
+}
+#bottom-space {
+    pointer-events: none;
+    font-size: 250px;
+    padding: 0;
+    margin:0;
+}
+code {
+    background: rgba(0, 0, 255, 0.1);
+    color: #00005e;
+    border: 2px solid rgba(0, 0, 255, 0.15);
+}
+#credits {
+    font-size: 10px;
+}
+#final {
+    width:100%;
+    height: 35px;
+    font-size: 25px;
+}
+#title {
+    font-size: 225px;
+    color: #0095ff;
+    position: relative;
+    text-shadow: 7px 7px 0 #00b1ff;
+    z-index: 1;
+    font-weight: bold;
+}
+#title::before {
+    position: absolute;
+    content: "WH4LE";
+    transform: translate(-14px, -14px);
+    color: #0037ff;
+    z-index: 2;
+    text-shadow: 7px 7px 0 rgb(0 102 255);
+}
+#title::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: "WH4LE";
+    transform: translate(14px, 14px);
+    color: #00c7ff;
+    z-index: -1;
+    text-shadow: 7px 7px 0 rgb(0 233 255);
+}
+button:disabled {
+    background: #cee1ff;
+}
+button:not(button:disabled) {
+    background: #d0d6f6;
+    border-color: #7ebcff;
+    color: #00005e;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+button:not(button:disabled):hover {
+    filter: brightness(90%);
+}
+#wys {
+    font-size: 75px;
+    color: #0097ff;
+    position: relative;
+    text-shadow: 5px 5px 0 #0085ff;
+    z-index: 1;
+    font-weight: 1000;
+}
+#wys::before {
+    position: absolute;
+    content: "WH4LE > SH1MMER";
+    transform: translate(-10px, -10px);
+    color: #00f3ff;
+    z-index: 2;
+    text-shadow: 5px 5px 0 rgb(0 177 255);
+}
+#wys::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: "WH4LE > SH1MMER";
+    transform: translate(10px, 10px);
+    color: #0072ff;
+    z-index: -1;
+    text-shadow: 5px 5px 0 rgb(0 97 255);
+}
+#lb {
+    font-size: 75px;
+    color: #0097ff;
+    position: relative;
+    text-shadow: 5px 5px 0 #0085ff;
+    z-index: 1;
+    font-weight: 1000;
+}
+#lb::before {
+    position: absolute;
+    content: "The LankyBypass";
+    transform: translate(-10px, -10px);
+    color: #00f3ff;
+    z-index: 2;
+    text-shadow: 5px 5px 0 rgb(0 177 255);
+}
+#lb::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: "The LankyBypass";
+    transform: translate(10px, 10px);
+    color: #0072ff;
+    z-index: -1;
+    text-shadow: 5px 5px 0 rgb(0 97 255);
+}
+#lbh {
+    margin: 10px;
+}
+hr {
+    color: blue;
+    border-color: #b4b8ff;
+}
+@media (max-width: 725px) {
+    #lb::after, #lb::before, #wys::after, #wys::before, #title::before, #title::after {
+        content: "" !important;
+    }
+}
+</style>
+</head>
+<body>
+<center>
+<span class="center" id="title">WH4LE</span>
+</center>
+<hr>
+<p class="center" id="subtitle"><i>-Open a debug window on your Chromebook-</i></p>
+<hr>
+<h2 class="center">What even is a debug window?</h2>
+<p>A debug window is a newly-implemented window type in ChromeOS. This debug window is supposed to be unaccessible by normal means; it's only intended to be used by Google employees. Once opened, a debug window has the ability to completely disable any extension, install any extension, edit policies, or unenroll completely.</p>
+<p>Since a debug window opening on an enrolled device wouldn't be good, Google made it very hard, nearly impossible to open one. Normally, you'd need to do a very tedious process with Google to even see a debug window, much less use it.</p>
+<hr>
+<h2 class="center">Okay, so what is WH4LE, and how does it work?</h2>
+<p>Even though Google made it so hard to open a debug window, it's surprisingly easy to open one using WH4LE. WH4LE uses a glitch in the way Chrome runs JavaScript to trick it into creating a debug window instead of a normal popup window. In fact, ChromeOS shows the debug window as a normal popup window due to the way it's opened. The specifics of this exploit are incredibly hard to explain, so I won't explain them here. However, as stated earlier, it's surprisingly easy to cause this glitch to occur.</p>
+<p>Note that, as stated earlier, debug windows only exist in ChromeOS. WH4LE won't work on Windows or Linux computers.</p>
+<p>After this debug window opens, it allows you to do nearly anything thinkable on your Chromebook. You can completely unenroll, disable WP, unblock devmode, install any extension, and install completely new OSes from this debug window. Google even has an option to directly flash SH1MMER to the internal storage, I assume to test their patch for it. </p>
+<hr>
+<center>
+<span id="wys">WH4LE &gt; SH1MMER</span><!--BIG D RANDY-->
+</center>
+<hr>
+<h2 class="center">How do you even use WH4LE?</h2>
+<p>Even though WH4LE is incredibly easy to do, there's still a decent amount of steps to do it. There isn't any rush when performing WH4LE, unless the current step says there is. The fastest you'll have to do smth, however, still gives you a few seconds to do it.</p>
+<br>
+<ol>
+<li>First, before doing WH4LE, you have to click this button to run a script that begins the process of WH4LE. <button onclick="start()" id="startBtn">Click me!</button></li>
+<br>
+<div id="afterStep1" style="display: none">
+<li>Go into your Chromebook's text editor. It should have an icon that looks like this: <code>&lt;t&gt;</code>. If it's not there, there's plenty of text editors online for you to use instead, just search for one. All you need is something that lets you download a file onto your Chromebook with arbitrary text in it.</li>
+<br>
+<li>Once your text editor is open, create a file, name it <code>wh4le.html</code> and copy the code you see when you drag this button into a new tab, and paste it in. <button id="draggable" draggable="true">Drag me into a new tab!</button></li>
+<br>
+<li>Save and/or download the file.</li>
+<br>
+<li>Find a way to get the <code>file://</code> URI for this new file. This can be easily done by double-clicking the new file in the File Manager <i>(chrome://file-manager)</i>, or going into your downloads <i>(chrome://downloads)</i>.</li>
+<br>
+<li>Open the newly-downloaded file by going to the URI you found in Step 5. You should be on a long URI starting with <code>file://</code> and ending in <code>wh4le.html</code>. If you aren't, you haven't done this step correctly.</li>
+<br>
+<li>You should now be on a page with text saying "WH4LE", and some instructions underneath. Follow the instructions on this new file, and return here once you're done. <button onclick="fileBtn()" id="file-btn">I have finished the file's instructions.</button></li>
+<br>
+</ol>
+<div id="final-steps" style="display: none">
+<p>Since you now have the file done, you can now open the debug window. However, there is a caveat to this at the moment. After the debug window opens, ChromeOS will immediately detect that you aren't allowed to use it, and it'll close when you try to use it.</p>
+<p>To show you this, here's the button that'll open the debug window: <button onclick="openDebug(false)">Open debug window</button>. Notice how the debug window vanishes after being interacted with? That's ChromeOS detecting that you aren't allowed to use it and closing it.</p>
+<p>There seems to be no way around this... right? There's no way Chrome would have a bug that would cause ChromeOS to not detect that you wouldn't be allowed to use it... right?</p>
+<hr id="lbh">
+<center>
+<span id="lb">The LankyBypass</span>
+</center>
+<!--FIND THE AMAZING DIGITAL CIRCUS MORPHS WITH POMNI?! (ROBLOX FIND THE MILKS, SIMPSONS & MORE!)-->
+<hr id="lbh">
+<p>I have no idea how or why this works, and why it has to be this URL.</p>
+<p>Going to this YouTube URL, <a href="https://youtube.com/watch?v=vEHh51zFS28"><code>https://youtube.com/watch?v=vEHh51zFS28</code></a>, will cause a memory leak in the Chrome browser. I cannot tell you why this happens. My personal belief is that the video is so cringey that it causes the memory leak. This memory leak, although fixed by Chrome very fast, is exactly what WH4LE needs to function. During the small amount of time this memory leak is occuring, ChromeOS won't be able to verify whether you are or aren't allowed to use the debug window, and due to Google's bad programming, defaults to you being allowed to use it.</p>
+<p>That comes up with another issue though. Since you need to open the video and the debug window so quickly in succession, it should still be impossible to do this. You can't open a tab and a new window so quick. Unless a website does it for you using JavaScript and some HTML.</p>
+<hr>
+<h2 class="center">The final button.</h2>
+<p>So... we have done it. We have found a way to open a debug window, and trick ChromeOS into thinking we are allowed to use it(albeit by a very cringey method).</p>
+<p>This is the final button. Drag <a href="https://youtube.com/watch?v=vEHh51zFS28">this text</a> into a new tab, than press the button as fast as possible. The memory leak from the video will prevent ChromeOS from finding out you can't use the debug window, allowing you to use the debug window.</p>
+<p><button onclick="openDebug(true)" id="final">The Final Button.</button></p><!--Fanum tax-->
+<hr>
+<h2 class="center">But wait, how do I use this? There's a login!</h2>
+<p>That was also hard for me to deal with, but I have found a login that works.</p>
+<ul>
+<li>User: <code>Matthew.Smith@google.com</code></li>
+<br>
+<li>Pass: <code>h@Jm#*-_@[}k|m@JmWMO^S./;kQmiw/?*nES3_TADC,&:@|S]/kW;Q}M|k?</code></li>
+</ul>
+<p>Don't ask where I got this from, but it works. After you're logged in, you have full reign over your Chromebook.</p><!--Slat X Wrighteous 69???? HE LEAKED MY IP!!!!-->
+</div>
+</div>
+<!-- credits n stuff -->
+<hr>
+<div id="credits">
+    <p class="center">Thanks to @Whar? <i>(Discord: adigitalmoon)</i> for buying the domain <code>whale.mom</code>.</p>
+    <p class="center">Thanks to <a href="https://kkilouwu.bio">Kilo</a> <i>(website: kkilouwu.bio)</i> or <i>(Discord: kbna.)</i> for hosting this site.</p>
+    <p class="center">Thanks to @Windows XP <i>(Discord: windowsexperience)</i> for the amazing favicon.</p>
+    <p class="center">Thanks to @NuclearNatoCat <i>(Discord: nuclearnatocat<!--.replace("cat", "skid")-->)</i> for writing the HTML for this site.</p>
+</div>
+<hr>
+<!-- bottom space -->
+<center>
+<h1 id="bottom-space">🐋</h1>
+</center>
+<script>
+// check if on cros
+let isOnCros = navigator.userAgent.toLowerCase().includes("cros");
+if(!isOnCros) {
+    let random = Math.floor(Math.random() * 2);
+    if(random === 1) {
+        document.getElementById("wys").innerHTML = "IM A SKID";/*yes i am*/
+        let style = document.createElement("style");
+        style.innerHTML = `
+        #wys::before {
+        position: absolute;
+        content: "IM A SKID";
+        transform: translate(-10px, -10px);
+        color: #00f3ff;
+        z-index: 2;
+        text-shadow: 5px 5px 0 rgb(0 177 255);
+        }
+        #wys::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        content: "IM A SKID";
+        transform: translate(10px, 10px);
+        color: #0072ff;
+        z-index: -1;
+        text-shadow: 5px 5px 0 rgb(0 97 255);
+        }
+        `;
+        document.head.append(style);
+    } else {
+        document.getElementById("wys").innerHTML = "YOURE A SKID";
+        let style = document.createElement("style");
+        style.innerHTML = `
+        #wys::before {
+        position: absolute;
+        content: "YOURE A SKID";
+        transform: translate(-10px, -10px);
+        color: #00f3ff;
+        z-index: 2;
+        text-shadow: 5px 5px 0 rgb(0 177 255);
+        }
+        #wys::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        content: "YOURE A SKID";
+        transform: translate(10px, 10px);
+        color: #0072ff;
+        z-index: -1;
+        text-shadow: 5px 5px 0 rgb(0 97 255);
+        }
+        `;
+        document.head.append(style);
+    }
+}
+
+function start() {
+    let startBtn = document.getElementById("startBtn");
+    startBtn.innerText = "Beginning the WH4LE exploit...";
+    startBtn.disabled = "true";
+startBtn.outerHTML = startBtn.outerHTML + '<img id="startBtnSpinner" style="border:unset;width:20px;height:20px;padding:0;margin:0;transform:translateY(5px);margin-left:2px;" src="loading.gif">'
+    let randomTime = Math.random() * 5000 + 5000;
+    setTimeout(() => {
+        alert("The WH4LE exploit has successfully begun. Please proceed to Step 2.");
+        startBtn.innerText = "Please proceed to Step 2.";
+        document.getElementById("afterStep1").style.display = "block";
+	document.getElementById("startBtnSpinner").remove();
+    }, randomTime);
+}
+
+function fileBtn() {
+    let fileButton = document.getElementById("file-btn");
+    fileButton.disabled = "true";
+    fileButton.innerText = "Please read the following, then proceed to the next step.";
+    document.getElementById("final-steps").style.display = "block";
+}
+
+function openDebug(video) {
+    let win = window.open("about:blank", "", "popup");
+    let html = "";
+    if(!isOnCros) {
+        html = "<title>ChromeOS Debug Menu</title><h1>The ChromeOS Debug Menu isn't compatible with other OSes.</h1>";
+    } else {
+    html = `
+    <!doctype html>
+    <html>
+    <head>
+    <title>ChromeOS Debug Menu</title>
+    <style>
+    * {
+        font-family: monospace;
+    }
+    #menu button {
+        padding-left: 5px;
+    }
+    .h2 {
+        font-size: 20px;
+        padding-right: 3px;
+    }
+    </style>
+    </head>
+    <body>
+    <h1>ChromeOS Debug Menu</h1>
+    <div id="signinBox">
+    <hr>
+    <span>User: <input id="un"></span>
+    <br>
+    <br>
+    <span>Pass: <input id="pw" type="password"></span>
+    <br>
+    <br>
+    <button onclick="signIn()">Sign In</button>
+    <p style="color:red;display:none" id="error">Incorrect username or password.</p>
+    <hr>
+    <p><i>If you are not a Google employee and have opened this window on accident, close it now. This window type is for debugging purposes only. Using this without proper authorization violates Google's <a href="https://www.google.com/accounts/TOS">Terms of Service.</a></i></p>
+    </div>
+    <div id="menu" style="display:none">
+    <hr>
+    <p>Welcome, Matthew Smith.</p>
+    <hr>
+    <b class="h2">Device -</b>
+    <button onclick="troll('updates')">Freeze updates</button>
+    <button onclick="troll('policies')">Edit policies</button>
+    <button onclick="troll('unenroll')">Unenroll*</button>
+    <button onclick="troll('crostini')">Enable crostini</button>
+    <button onclick="troll('devmode')">Unblock devmode*</button>
+    <button onclick="troll('wp')">Disable WP*</button>
+    <button onclick="troll('crash')">Crash</button>
+    <button onclick="troll('brick')">Softbrick</button>
+    <br>
+    <span>*requires powerwash</span>
+    <br>
+    <br>
+    <b class="h2">Apps/Extensions -</b>
+    <input id="extId" placeholder="Extension id"> 
+    <button onclick="troll('install')">Install</button>
+    <button onclick="troll('adminInstall')">Install as admin</button>
+    <button onclick="troll('uninstall')">Uninstall</button>
+    <button onclick="troll('disable')">Disable</button>
+    <button onclick="troll('enable')">Enable</button>
+    <button onclick="troll('steam')">Install steam</button>
+    <br>
+    <br>
+    <b class="h2">Flags -</b>
+    <input id="extId" placeholder="Flag name"> 
+    <button onclick="troll('flagsEnable')">Enable*</button>
+    <button onclick="troll('flagsDisable')">Disable*</button>
+    <br>
+    <span>*requires reboot</span>
+    <br>
+    <br>
+    <b class="h2">OS -</b>
+    <button onclick="troll('cros81')">Downgrade to ChromeOS v81*</button>
+    <button onclick="troll('win11')">Upgrade to Windows 11*</button>
+    <button onclick="troll('mac')">Upgrade to MacOS*</button>
+    <button onclick="troll('debian')">Upgrade to Debian*</button>
+    <button onclick="troll('shimmer')">Flash SH1MMER to Internal Storage*</button>
+    <br>
+    <span>*requires powerwash</span>
+    <br>
+    <br>
+    <button id="closeBtn">Close</button>
+    </div>
+    <div id="debugError" style="display: none">
+    <hr>
+    <span style="color: red">ChromeOS Debug Menu has encountered an error. Please try again in a few minutes.</span>
+    <br>
+    <br>
+    <button onclick="retry()">Retry</button>
+    <hr>
+    </div>
+    <script>
+    let hasWatchedVideo = ${video};
+    if(!hasWatchedVideo) {
+        document.addEventListener("click", () => {close()}, false);
+    }
+    document.getElementById("closeBtn").addEventListener("click", () => {close()}, false);
+    let user = "Matthew.Smith@google.com";
+    let pass = "h@Jm#*-_@[}k|m@JmWMO^S./;kQmiw/?*nES3_TADC,&:@|\S]/kW;Q}M|k?";
+    function signIn() {
+        if(document.getElementById("un").value === user && document.getElementById("pw").value === pass) {
+            document.getElementById("signinBox").style.display = "none";
+            document.getElementById("menu").style.display = "block";
+        } else {
+            document.getElementById("error").style.display = "block";
+        }
+    }
+    let hasHadError = false;
+    function troll(num) {
+        if(hasHadError) {
+            switch(num) {
+                case "updates":
+                alert("Updates successfully frozen.")
+                break;
+                case "policies":
+                alert("Go to chrome://policy, there should now be an Edit button. If not, restart your Chromebook.");
+                break;
+                case "unenroll":
+                alert("Powerwash your Chromebook. check_enrollment has been set to 0. All user data will be saved.");
+                break;
+                case "cros81":
+                alert("Powerwash your Chromebook. It'll reboot into ChromeOS v81. All user data will be saved.");
+                break;
+                case "win11":
+                alert("Powerwash your Chromebook. It'll reboot into Windows 11. All user data will be saved.");
+                break;
+                case "mac":
+                alert("Powerwash your Chromebook. It'll reboot into MacOS. All user data will be saved.");
+                break;
+                case "shimmer":
+                alert("Powerwash your Chromebook. It'll reboot into SH1MMER. All user data will be saved.");
+                break;
+                case "debian":
+                alert("Powerwash your Chromebook. It'll reboot into Debian. All user data will be saved.");
+                break;
+                case "flagsEnable":
+                alert("Restart your Chromebook. The selected flag will be applied.");
+                break;
+                case "flagsDisable":
+                alert("Restart your Chromebook. The selected flag will be disabled.");
+                break;
+                case "devmode":
+                alert("Powerwash your Chromebook. block_devmode has been set to 0. All user data will be saved.");
+                break;
+                case "wp":
+                alert("Error disabling write protection. Write protection has been enabled indefinitely.");
+                break;
+                case "brick":
+                alert("Powerwash your Chromebook within the next 5 minutes. It'll be soft-bricked. All user data will not be saved.");
+                break;
+                case "crostini":
+                case "crash":
+                document.getElementById("debugError").style.display = "block";
+                document.getElementById("menu").style.display = "none";
+                break;
+                case "install":
+                alert("The specified extension has been installed. It may not show up, but it should within the hour.");
+                break;
+                case "adminInstall":
+                alert("The specified extension has been installed as an admin extension. It may not show up, but it should within the hour.");
+                break;
+                case "uninstall":
+                alert("The specified extension has been uninstalled. It may still show up, but it should disappear within the hour.");
+                break;
+                case "disable":
+                alert("The specified extension has been disabled. It may still show as enabled, but it should show as disabled within the hour.");
+                break;
+                case "enable":
+                alert("The specified extension has been enabled. It may still show as disabled, but it should show as enabled within the hour.");
+                break;
+                case "steam":
+                alert("If you upgrade to Windows 11, Steam will be pre-installed.");
+                break;
+            }
+        } else {
+            document.getElementById("debugError").style.display = "block";
+            document.getElementById("menu").style.display = "none";
+            hasHadError = true;
+        }
+    }
+    function retry() {
+        document.getElementById("debugError").style.display = "none";
+        document.getElementById("menu").style.display = "block";
+    }
+    <\/script>
+    </body>
+    </html>
+    `;
+    }
+    win.document.write(html);
+}
+
+let draggable = document.getElementById("draggable");
+draggable.ondragstart = (e) => {
+   e.dataTransfer.setData("text/plain", "view-source:"+location.origin+"/file-download.html");
+};
+
+// create filesystem uri thats whales chromeos later
+function onInitFs(fs) {
+fs.root.getFile("WH4LE.html", {create: true}, (file) => {
+let blob = new Blob(["<script>location.href='https://google.com'<\/script>"]);
+  file.createWriter(function (writer) {
+    writer.write(blob);
+  });
+});
+}
+
+try { window.webkitRequestFileSystem(window.TEMPORARY, 1024*1024, onInitFs); } catch { alert("Couldn't request filesystem! Are you on ChromeOS?") }/*seems legit*/
+</script>
+</body>
+</html>
