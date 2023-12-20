@@ -1,5 +1,5 @@
 # Investing the Integrity of the WH4LE Exploit.
-TL;DR WH4LE is just a troll exploit to trick tech illterate people to powerwash their device repeatedly.
+TL;DR -  WH4LE is just a troll exploit to trick tech illterate people to powerwash their device repeatedly.
 ___
 Here is the proof that WH4LE is a fake exploit, diving into the WH4LE and "ChromeOS Debug Menu's" Source Code:
 ## 1. The first step button doesn't do anything!
