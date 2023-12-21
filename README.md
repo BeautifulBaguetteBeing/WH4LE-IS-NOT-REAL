@@ -49,7 +49,7 @@ This isn't a real password input field... yea...
 ```html
  <p>Welcome, Matthew Smith.</p>
 ```
-I don't think I need to elaborate.
+Google has many developers so they wouldn't have a hard-coded name.
 
 ## 4. The Function that Handles the Actual Exploits
 It's LITERALLY CALLED `troll()` and all it does is throw exactly one error and then just shoots out an alert saying that it did something when it didn't. Here is the entire function.
